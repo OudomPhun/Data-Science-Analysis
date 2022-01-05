@@ -14,7 +14,13 @@ forums](https://discuss.streamlit.io).
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
-
+df["color"] = df["species"].replace(
+{"Adelie": 1, "Chinstrap": 2, "Gentoo": 3}
+)
+ax.scatter(x=df["bill_depth_mm"], y=df["bill_length_mm"], c=df["color"])
+plt.title("Bill Depth by Bill Length")
+plt.xlabel("Bill Depth (mm)")
+plt.ylabel("Bill Length (mm)")
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
@@ -37,10 +43,3 @@ with st.echo(code_location='below'):
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
     
-    df["color"] = df["species"].replace(
-    {"Adelie": 1, "Chinstrap": 2, "Gentoo": 3}
-)
-ax.scatter(x=df["bill_depth_mm"], y=df["bill_length_mm"], c=df["color"])
-plt.title("Bill Depth by Bill Length")
-plt.xlabel("Bill Depth (mm)")
-plt.ylabel("Bill Length (mm)")
