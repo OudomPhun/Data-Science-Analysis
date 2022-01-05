@@ -36,3 +36,11 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+    
+    df["color"] = df["species"].replace(
+    {"Adelie": 1, "Chinstrap": 2, "Gentoo": 3}
+)
+ax.scatter(x=df["bill_depth_mm"], y=df["bill_length_mm"], c=df["color"])
+plt.title("Bill Depth by Bill Length")
+plt.xlabel("Bill Depth (mm)")
+plt.ylabel("Bill Length (mm)")
