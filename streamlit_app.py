@@ -5,12 +5,11 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to the world of Data Science!
+# Data Analysis on Spiral!
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+For `/Data Analysis on Spiral` to to your business desire :smile:
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+If you have any questions, contact me via my email [oudomphun@gmail.com]
 
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
@@ -22,7 +21,7 @@ with st.echo(code_location='below'):
     Point = namedtuple('Point', 'x y')
     data = []
 
-    points_per_turn = total_points / num_turns
+    points_per_turn = total_points / num_turn
 
     for curr_point_num in range(total_points):
         curr_turn, i = divmod(curr_point_num, points_per_turn)
